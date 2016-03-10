@@ -27,9 +27,9 @@ public class ParkController {
 	
 	@RequestMapping("/parkDetail")
 	public String displayParkDetail(Map<String, Object> model, 
-									@RequestParam("parkCodeRequest") String parkCode) {
+									@RequestParam("parkCode") String parkCode) {
 		
-		model.put("parkCodeRequest", parkDAO.findParkByCode(parkCode));
+		model.put("park", parkDAO.findParkByCode(parkCode));
 		return "parkDetail";
 	}
 
